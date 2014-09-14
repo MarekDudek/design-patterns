@@ -6,8 +6,8 @@ import interretis.designpatterns.abstractfactory.api.products.metamodel.Administ
 
 public class Wojewodztwo extends AbstractAdministrativeUnit implements Province {
 
-    public Wojewodztwo(AdministrativeUnit parent)
+    public Wojewodztwo(String name, AdministrativeUnit parent)
     {
-	super((AbstractAdministrativeUnit) parent);
+	super(name, (AbstractAdministrativeUnit) parent);
     }
 }

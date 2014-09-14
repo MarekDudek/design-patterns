@@ -6,8 +6,8 @@ import interretis.designpatterns.abstractfactory.api.products.firstlevel.State;
 
 public class StateOrCommonwelth extends AbstractAdministrativeUnit implements State {
 
-    public StateOrCommonwelth(Country country)
+    public StateOrCommonwelth(String name, Country country)
     {
-	super((AbstractAdministrativeUnit) country);
+	super(name, (AbstractAdministrativeUnit) country);
     }
 }

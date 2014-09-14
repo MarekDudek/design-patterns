@@ -6,8 +6,8 @@ import interretis.designpatterns.abstractfactory.api.products.firstlevel.Reserva
 
 public class IndianReservation extends AbstractAdministrativeUnit implements Reservation {
 
-    public IndianReservation(Country country) 
+    public IndianReservation(String name, Country country) 
     {
-	super((AbstractAdministrativeUnit) country);
+	super(name, (AbstractAdministrativeUnit) country);
     }
 }

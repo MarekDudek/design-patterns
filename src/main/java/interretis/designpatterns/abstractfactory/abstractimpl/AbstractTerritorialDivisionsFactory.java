@@ -7,44 +7,59 @@ import interretis.designpatterns.abstractfactory.api.products.firstlevel.Federal
 import interretis.designpatterns.abstractfactory.api.products.firstlevel.Province;
 import interretis.designpatterns.abstractfactory.api.products.firstlevel.Reservation;
 import interretis.designpatterns.abstractfactory.api.products.firstlevel.State;
-import interretis.designpatterns.abstractfactory.api.products.metamodel.SecondLevelDivision;
+import interretis.designpatterns.abstractfactory.api.products.metamodel.AdministrativeUnit;
+import interretis.designpatterns.abstractfactory.api.products.secondlevel.District;
 import interretis.designpatterns.abstractfactory.api.products.thirdlevel.Commune;
+import interretis.designpatterns.abstractfactory.api.products.thirdlevel.Town;
 
 public abstract class AbstractTerritorialDivisionsFactory implements TerritorialDivisionsFactory {
 
     @Override
-    public State createState(Country country)
+    public State createState(String name, Country country)
     {
 	throw new IllegalStateException("This country does not have states");
     }
 
     @Override
-    public Province createProvince(Country country)
+    public Province createProvince(String name, Country country)
     {
 	throw new IllegalStateException("This country does not have provinces");
     }
 
     @Override
-    public FederalDistrict createFederalDistrict(Country country)
+    public FederalDistrict createFederalDistrict(String name, Country country)
     {
 	throw new IllegalStateException("This country does not have federal districts");
     }
 
     @Override
-    public DependentTerritory createDependentTerritory(Country country)
+    public DependentTerritory createDependentTerritory(String name, Country country)
     {
 	throw new IllegalStateException("This country does not have dependent territories");
     }
 
     @Override
-    public Reservation createReservation(Country country)
+    public Reservation createReservation(String name, Country country)
     {
 	throw new IllegalStateException("This country does not have reservations");
     }
 
     @Override
-    public Commune createCommune(SecondLevelDivision division) 
+    public Commune createCommune(String name, AdministrativeUnit division) 
     {
 	throw new IllegalStateException("This country does not have communes");
+    }
+
+    @Override
+    public Town createTown(String name, AdministrativeUnit parent) 
+    {
+	throw new IllegalStateException("This country does not have towns");
+    }
+
+    @Override
+    public District createDistrict(String name, AdministrativeUnit parent) 
+    {
+	throw new IllegalStateException("This country does not have districts");
+
     }
 }

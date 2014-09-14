@@ -5,8 +5,8 @@ import interretis.designpatterns.abstractfactory.api.products.Country;
 
 public class America extends AbstractAdministrativeUnit implements Country {
 
-    public America() 
+    public America(String name) 
     {
-	super(null);
+	super(name, null);
     }
 }

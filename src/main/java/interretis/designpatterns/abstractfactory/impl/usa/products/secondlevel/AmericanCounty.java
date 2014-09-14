@@ -1,4 +1,4 @@
-package interretis.designpatterns.abstractfactory.impl.usa.products.firstlevel;
+package interretis.designpatterns.abstractfactory.impl.usa.products.secondlevel;
 
 import interretis.designpatterns.abstractfactory.abstractimpl.AbstractAdministrativeUnit;
 import interretis.designpatterns.abstractfactory.api.products.metamodel.AdministrativeUnit;
@@ -6,8 +6,8 @@ import interretis.designpatterns.abstractfactory.api.products.secondlevel.County
 
 public class AmericanCounty extends AbstractAdministrativeUnit implements County {
 
-    public AmericanCounty(AdministrativeUnit parent)
+    public AmericanCounty(String name, AdministrativeUnit parent)
     {
-	super((AbstractAdministrativeUnit) parent);
+	super(name, (AbstractAdministrativeUnit) parent);
     }
 }

@@ -6,8 +6,8 @@ import interretis.designpatterns.abstractfactory.api.products.firstlevel.Depende
 
 public class InsularArea extends AbstractAdministrativeUnit implements  DependentTerritory{
 
-    public InsularArea(Country country) 
+    public InsularArea(String name, Country country) 
     {
-	super((AbstractAdministrativeUnit)country);
+	super(name, (AbstractAdministrativeUnit)country);
     }
 }

@@ -1,13 +1,13 @@
 package interretis.designpatterns.abstractfactory.impl.poland.products;
 
 import interretis.designpatterns.abstractfactory.abstractimpl.AbstractAdministrativeUnit;
-import interretis.designpatterns.abstractfactory.api.products.metamodel.SecondLevelDivision;
+import interretis.designpatterns.abstractfactory.api.products.metamodel.AdministrativeUnit;
 import interretis.designpatterns.abstractfactory.api.products.thirdlevel.Commune;
 
 public class Gmina extends AbstractAdministrativeUnit implements Commune {
 
-    public Gmina(SecondLevelDivision division) 
+    public Gmina(String name, AdministrativeUnit division) 
     {
-	super((AbstractAdministrativeUnit)division);
+	super(name, (AbstractAdministrativeUnit)division);
     }
 }
