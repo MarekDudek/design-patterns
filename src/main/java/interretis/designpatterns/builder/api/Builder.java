@@ -7,4 +7,6 @@ public interface Builder {
     void levelTwo(String name);
 
     void levelThree(String name);
+
+    void levelFour(String name);
 }

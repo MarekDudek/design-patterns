@@ -3,9 +3,10 @@ package interretis.designpatterns.builder;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
+import interretis.designpatterns.builder.api.Director;
 import interretis.designpatterns.builder.impl.PolandBuilder;
 import interretis.designpatterns.builder.impl.Portion;
-import interretis.designpatterns.builder.input.Director;
+import interretis.designpatterns.builder.input.HierarchicTextDataDirector;
 
 import java.io.File;
 import java.nio.charset.Charset;
@@ -25,7 +26,7 @@ public class BuildingTest {
 	// when
 	final PolandBuilder builder = new PolandBuilder();
 
-	final Director director = new Director(file, builder, Charset.forName("UTF-8"));
+	final Director director = new HierarchicTextDataDirector(file, builder, Charset.forName("UTF-8"));
 	director.construct();
 
 	final Portion country = (Portion) builder.getResult();
@@ -35,5 +36,7 @@ public class BuildingTest {
 
 	final List<Portion> provinces = country.getChildren();
 	assertThat(provinces, hasSize(4));
+	
+	System.out.println(country);
     }
 }
