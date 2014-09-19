@@ -64,7 +64,7 @@ public class BuilderTest {
 
 	assertThat(america.getStates(), hasSize(5));
 	assertThat(america.getDistricts(), hasSize(1));
-
+	assertThat(america.getTerritories(), hasSize(3));
     }
 
     @Test

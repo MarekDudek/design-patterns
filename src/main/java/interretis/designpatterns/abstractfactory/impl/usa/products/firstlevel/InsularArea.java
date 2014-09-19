@@ -4,10 +4,10 @@ import interretis.designpatterns.abstractfactory.abstractimpl.AbstractAdministra
 import interretis.designpatterns.abstractfactory.api.products.Country;
 import interretis.designpatterns.abstractfactory.api.products.firstlevel.DependentTerritory;
 
-public class InsularArea extends AbstractAdministrativeUnit implements  DependentTerritory{
+public class InsularArea extends AbstractAdministrativeUnit implements DependentTerritory {
 
-    public InsularArea(String name, Country country) 
+    public InsularArea(String name, Country country)
     {
-	super(name, (AbstractAdministrativeUnit)country);
+	super(name, (AbstractAdministrativeUnit) country);
     }
 }

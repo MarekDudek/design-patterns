@@ -6,7 +6,7 @@ import interretis.designpatterns.abstractfactory.api.products.secondlevel.County
 
 public class Powiat extends AbstractAdministrativeUnit implements County {
 
-    public Powiat(String name, AdministrativeUnit parent) 
+    public Powiat(String name, AdministrativeUnit parent)
     {
 	super(name, (AbstractAdministrativeUnit) parent);
     }

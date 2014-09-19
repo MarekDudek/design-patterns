@@ -1,13 +1,9 @@
 package interretis.designpatterns.builder.impl.america;
 
 import lombok.AllArgsConstructor;
-import lombok.ToString;
 
 @AllArgsConstructor
-@ToString
-public class State {
+public class Territory {
 
     String name;
-    String acronym;
-    String type;
 }

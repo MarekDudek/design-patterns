@@ -9,6 +9,7 @@ public class AmericaBuilder implements Builder {
 
     public static final Pattern STATE_PATTERN = Pattern.compile("^(.*)\t([A-Z]{2})\t\\((state|commonwelth)\\)$");
     public static final Pattern DISTRICT_PATTERN = Pattern.compile("^(.*)\t\\((federal district)\\)$");
+    public static final Pattern TERRITORY_PATTERN = Pattern.compile("^(.*)\t\\((territory)\\)$");
 
     private America america;
 
@@ -43,6 +44,18 @@ public class AmericaBuilder implements Builder {
 
 	    final FederalDistrict district = new FederalDistrict(name);
 	    america.addDistrict(district);
+
+	    return;
+	}
+
+	final Matcher territoryMatcher = TERRITORY_PATTERN.matcher(line);
+
+	if (territoryMatcher.find())
+	{
+	    final String name = territoryMatcher.group(1);
+
+	    final Territory territory = new Territory(name);
+	    america.addTerritory(territory);
 
 	    return;
 	}

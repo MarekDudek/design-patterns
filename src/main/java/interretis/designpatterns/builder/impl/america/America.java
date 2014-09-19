@@ -12,14 +12,21 @@ public class America {
     List<State> states = Lists.newArrayList();
     @Getter
     List<FederalDistrict> districts = Lists.newArrayList();
-    
-    public void addState(State state) 
+    @Getter
+    List<Territory> territories = Lists.newArrayList();
+
+    public void addState(State state)
     {
 	states.add(state);
     }
 
-    public void addDistrict(FederalDistrict district) 
+    public void addDistrict(FederalDistrict district)
     {
 	districts.add(district);
+    }
+
+    public void addTerritory(Territory territory)
+    {
+	territories.add(territory);
     }
 }

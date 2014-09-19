@@ -6,8 +6,8 @@ import interretis.designpatterns.abstractfactory.api.products.thirdlevel.Commune
 
 public class Gmina extends AbstractAdministrativeUnit implements Commune {
 
-    public Gmina(String name, AdministrativeUnit division) 
+    public Gmina(String name, AdministrativeUnit division)
     {
-	super(name, (AbstractAdministrativeUnit)division);
+	super(name, (AbstractAdministrativeUnit) division);
     }
 }

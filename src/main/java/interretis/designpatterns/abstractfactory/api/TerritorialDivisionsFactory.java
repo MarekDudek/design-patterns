@@ -20,18 +20,18 @@ public interface TerritorialDivisionsFactory {
     State createState(String name, Country country);
 
     Province createProvince(String name, Country country);
-    
+
     FederalDistrict createFederalDistrict(String name, Country country);
-    
+
     DependentTerritory createDependentTerritory(String name, Country country);
-    
+
     Reservation createReservation(String name, Country country);
-    
+
     County createCounty(String name, FirstLevelDivision parent);
-   
+
     District createDistrict(String name, AdministrativeUnit parent);
-    
+
     Commune createCommune(String name, AdministrativeUnit parent);
-    
+
     Town createTown(String name, AdministrativeUnit parent);
 }
