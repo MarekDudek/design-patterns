@@ -43,7 +43,8 @@ public class PolandBuilder implements Builder {
 	new Portion(name, currentDistrict);
     }
 
-    public Object getResult() {
+    public Object getResult() 
+    {
 	return country;
     }
 }

@@ -11,11 +11,14 @@ import com.google.common.collect.Lists;
 public class Portion {
 
     private String name;
-    
     private Portion parent;
-    
     @Getter
     private List<Portion> children;
+
+    public Portion(String name)
+    {
+	this(name, null);
+    }
 
     public Portion(String name, Portion parent)
     {
@@ -25,17 +28,16 @@ public class Portion {
 
 	if (this.parent != null)
 	{
-	    if (this.parent.children == null)
-	    {
-		this.parent.children = Lists.newLinkedList();
-	    }
-
+	    assertChildrenInitialized();
 	    this.parent.children.add(this);
 	}
     }
 
-    public Portion(String name)
+    private void assertChildrenInitialized()
     {
-	this(name, null);
+	if (parent.children == null)
+	{
+	    parent.children = Lists.newLinkedList();
+	}
     }
 }

@@ -3,45 +3,50 @@ package interretis.designpatterns.builder.input;
 import interretis.designpatterns.builder.api.Builder;
 import interretis.designpatterns.builder.api.Director;
 
-import java.io.File;
-import java.nio.charset.Charset;
 import java.util.List;
 
-import lombok.AllArgsConstructor;
+import org.springframework.util.StringUtils;
 
-import com.google.common.io.Files;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class HierarchicTextDataDirector implements Director {
 
-    private File file;
     private Builder builder;
-    private Charset charset;
+
+    enum Level {
+
+	FIRST, SECOND, THIRD, FOURTH;
+
+	public static Level forLine(final String line)
+	{
+	    int occurences = StringUtils.countOccurrencesOf(line, "\t");
+	    return Level.values()[occurences];
+	}
+    }
 
     @Override
-    public void construct() throws Exception
+    public void construct(final List<String> lines)
     {
-	final List<String> lines = Files.readLines(file, charset);
-
 	for (final String line : lines)
 	{
+	    final Level level = Level.forLine(line);
+
 	    final String trimmed = line.trim();
 
-	    if (line.startsWith("\t\t\t"))
-	    {
-		builder.levelFour(trimmed);
-	    }
-	    else if (line.startsWith("\t\t"))
-	    {
-		builder.levelThree(trimmed);
-	    }
-	    else if (line.startsWith("\t"))
-	    {
-		builder.levelTwo(trimmed);
-	    }
-	    else
-	    {
+	    switch (level) {
+	    case FIRST:
 		builder.levelOne(trimmed);
+		break;
+	    case SECOND:
+		builder.levelTwo(trimmed);
+		break;
+	    case THIRD:
+		builder.levelThree(trimmed);
+		break;
+	    case FOURTH:
+		builder.levelFour(trimmed);
+		break;
 	    }
 	}
     }

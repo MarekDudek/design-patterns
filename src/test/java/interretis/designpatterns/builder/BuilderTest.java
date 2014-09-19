@@ -14,7 +14,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-public class BuildingTest {
+import com.google.common.io.Files;
+
+public class BuilderTest {
 
     @Test
     public void country_should_be_properly_build() throws Exception
@@ -22,16 +24,16 @@ public class BuildingTest {
 	// given
 	final String path = getClass().getResource("poland.txt").getFile();
 	final File file = new File(path);
+	final List<String> lines = Files.readLines(file, Charset.forName("UTF-8"));
 
 	// when
 	final PolandBuilder builder = new PolandBuilder();
-
-	final Director director = new HierarchicTextDataDirector(file, builder, Charset.forName("UTF-8"));
-	director.construct();
-
-	final Portion country = (Portion) builder.getResult();
+	final Director director = new HierarchicTextDataDirector(builder);
+	director.construct(lines);
 
 	// then
+	final Portion country = (Portion) builder.getResult();
+
 	assertThat(country, notNullValue());
 
 	final List<Portion> provinces = country.getChildren();
