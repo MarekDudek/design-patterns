@@ -36,7 +36,5 @@ public class BuildingTest {
 
 	final List<Portion> provinces = country.getChildren();
 	assertThat(provinces, hasSize(4));
-	
-	System.out.println(country);
     }
 }
