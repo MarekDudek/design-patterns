@@ -1,0 +1,10 @@
+USA
+	Florida	FL	(state)
+	California	CA	(state)
+	North Dakota	ND	(state)
+	Massachusetts	MA	(commonwelth)
+	Pensylvania	PA	(commonwelth)
+	District of Columbia	(federal district)
+	Guam	(territory)
+	Puerto Rico	(territory)
+	Samoa (territory)

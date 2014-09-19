@@ -1,4 +1,4 @@
-package interretis.designpatterns.builder.impl;
+package interretis.designpatterns.builder.impl.poland;
 
 import java.util.List;
 

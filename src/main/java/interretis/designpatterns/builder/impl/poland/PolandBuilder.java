@@ -1,4 +1,4 @@
-package interretis.designpatterns.builder.impl;
+package interretis.designpatterns.builder.impl.poland;
 
 import static com.google.common.base.Preconditions.checkState;
 import interretis.designpatterns.builder.api.Builder;
@@ -43,7 +43,7 @@ public class PolandBuilder implements Builder {
 	new Portion(name, currentDistrict);
     }
 
-    public Object getResult() 
+    public Portion getResult() 
     {
 	return country;
     }
