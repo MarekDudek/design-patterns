@@ -33,7 +33,7 @@ public class PolishTerritorialDivisionsFactory extends AbstractTerritorialDivisi
     }
 
     @Override
-    public Commune createCommune(String name, AdministrativeUnit division) 
+    public Commune createCommune(String name, AdministrativeUnit division)
     {
 	return new Gmina(name, division);
     }

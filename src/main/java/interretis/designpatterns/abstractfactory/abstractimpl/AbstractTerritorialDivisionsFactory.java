@@ -45,19 +45,19 @@ public abstract class AbstractTerritorialDivisionsFactory implements Territorial
     }
 
     @Override
-    public Commune createCommune(String name, AdministrativeUnit division) 
+    public Commune createCommune(String name, AdministrativeUnit division)
     {
 	throw new IllegalStateException("This country does not have communes");
     }
 
     @Override
-    public Town createTown(String name, AdministrativeUnit parent) 
+    public Town createTown(String name, AdministrativeUnit parent)
     {
 	throw new IllegalStateException("This country does not have towns");
     }
 
     @Override
-    public District createDistrict(String name, AdministrativeUnit parent) 
+    public District createDistrict(String name, AdministrativeUnit parent)
     {
 	throw new IllegalStateException("This country does not have districts");
 

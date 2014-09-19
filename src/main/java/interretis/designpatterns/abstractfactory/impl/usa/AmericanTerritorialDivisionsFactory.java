@@ -59,13 +59,13 @@ public class AmericanTerritorialDivisionsFactory extends AbstractTerritorialDivi
     }
 
     @Override
-    public Town createTown(String name, AdministrativeUnit parent) 
+    public Town createTown(String name, AdministrativeUnit parent)
     {
 	return new AmericanCity(name, parent);
     }
 
     @Override
-    public District createDistrict(String name, AdministrativeUnit parent) 
+    public District createDistrict(String name, AdministrativeUnit parent)
     {
 	return new InsularTerritoryDistrict(name, parent);
     }

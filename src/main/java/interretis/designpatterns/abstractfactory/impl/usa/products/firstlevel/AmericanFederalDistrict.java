@@ -6,7 +6,7 @@ import interretis.designpatterns.abstractfactory.api.products.firstlevel.Federal
 
 public class AmericanFederalDistrict extends AbstractAdministrativeUnit implements FederalDistrict {
 
-    public AmericanFederalDistrict(String name, Country country) 
+    public AmericanFederalDistrict(String name, Country country)
     {
 	super(name, (AbstractAdministrativeUnit) country);
     }
