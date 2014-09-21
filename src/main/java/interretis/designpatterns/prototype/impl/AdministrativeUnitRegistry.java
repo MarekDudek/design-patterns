@@ -14,11 +14,20 @@ import com.google.common.collect.ImmutableMap;
 public class AdministrativeUnitRegistry implements PrototypeRegistry {
 
     private final Map<AdministrativeUnitType, AdministrativeUnit> prototypes =
+
 	    ImmutableMap.<AdministrativeUnitType, AdministrativeUnit> builder().
-		    put(COUNTRY, new AdministrativeUnit(COUNTRY)).
-		    put(PROVINCE, new AdministrativeUnit(PROVINCE)).
-		    put(DISTRICT, new AdministrativeUnit(DISTRICT)).
-		    put(COMMUNE, new AdministrativeUnit(COMMUNE)).
+		    put(COUNTRY,
+			    new AdministrativeUnit(COUNTRY)
+		    ).
+		    put(PROVINCE,
+			    new AdministrativeUnit(PROVINCE)
+		    ).
+		    put(DISTRICT,
+			    new AdministrativeUnit(DISTRICT)
+		    ).
+		    put(COMMUNE,
+			    new AdministrativeUnit(COMMUNE)
+		    ).
 		    build();
 
     @Override
